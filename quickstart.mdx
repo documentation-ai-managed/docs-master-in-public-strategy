@@ -1,0 +1,136 @@
+---
+title: Quickstart Guide
+description: Set up your account and create your first documentation space in just a few minutes.
+---
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+<Callout kind="info">
+
+- A modern web browser (Chrome, Firefox, or Safari)
+- An email address for account verification
+- Optional: API access for programmatic uploads (`YOUR_API_KEY`)
+
+</Callout>
+
+## Register Your Account
+
+Sign up in under a minute to access Master in Public Strategy.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Navigate to `https://dashboard.example.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Details" icon="user">
+    Provide your email, name, and a strong password. Agree to the terms.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification link from `no-reply@example.com` and click it.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard and sign in with your credentials.
+  </Step>
+</Steps>
+
+## Create Your First Project Space
+
+Project spaces organize your documentation by topic or team.
+
+<Steps>
+  <Step title="New Space" icon="plus">
+    From the dashboard, select **New Space** and name it `Public Strategy Docs`.
+  </Step>
+  <Step title="Set Permissions" icon="shield">
+    Choose **Private** for solo use or **Team** to invite collaborators via email.
+  </Step>
+  <Step title="Customize" icon="settings">
+    Add a description: "Central hub for public strategy documentation" and set brand color to `#3B82F6`.
+  </Step>
+</Steps>
+
+## Upload Initial Documents
+
+Add your first files manually or via API.
+
+<Tabs>
+  <Tab title="Web Upload" icon="upload">
+    Drag and drop files into your space or click **Upload**.
+
+    Supported formats: `.mdx`, `.md`, `.pdf`, `.docx` (up to `50MB` each).
+  </Tab>
+  <Tab title="API Upload" icon="code">
+    Use the API for automation.
+
+    <CodeGroup tabs="JavaScript,cURL">
+      ````javascript
+      const formData = new FormData();
+      formData.append('file', documentFile);
+      formData.append('spaceId', 'your-space-id');
+      formData.append('apiKey', 'YOUR_API_KEY');
+
+      const response = await fetch('https://api.example.com/v1/spaces/your-space-id/documents', {
+        method: 'POST',
+        body: formData,
+      });
+      ````
+
+      ````bash
+      curl -X POST https://api.example.com/v1/spaces/your-space-id/documents \
+        -H "Authorization: Bearer YOUR_API_KEY" \
+        -F "file=@strategy-plan.mdx"
+      ````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Start with sample files like `strategy-plan.mdx` and `roadmap.pdf` for testing.
+</Callout>
+
+## Basic Interface Tour
+
+Explore key areas of the dashboard.
+
+<Columns cols={3}>
+  <Card title="Spaces List" icon="layout" href="#">
+    View and switch between your project spaces.
+  </Card>
+  <Card title="Editor" icon="edit-3" href="#">
+    Real-time MDX editor with live preview and AI suggestions.
+  </Card>
+  <Card title="Search" icon="search" href="#">
+    Full-text search across all documents and spaces.
+  </Card>
+</Columns>
+
+## Organize Your Documentation
+
+Structure your content for easy navigation.
+
+<Tabs>
+  <Tab title="Folders" icon="folder">
+    Create folders like `Guides/`, `APIs/`, and `References/`.
+
+    Drag documents to reorganize.
+  </Tab>
+  <Tab title="Tags" icon="tag">
+    Add tags such as `strategy`, `public-policy`, `draft`.
+
+    Filter views by tags for quick access.
+  </Tab>
+</Tabs>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your spaces with advanced auth options.
+  </Card>
+  <Card title="Advanced Editing" icon="code" href="/introduction">
+    Dive into MDX components and custom layouts.
+  </Card>
+</Columns>
+
+You're now ready to build your documentation hub. Explore the interface and invite your team!

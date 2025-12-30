@@ -1,0 +1,136 @@
+---
+title: Core Features
+description: Explore the main capabilities of Master in Public Strategy for managing your project docs.
+---
+
+## Overview
+
+Master in Public Strategy provides powerful tools to streamline your documentation workflow. You organize content efficiently, collaborate with teams, search quickly, track changes, and share outputs seamlessly. These core features help you maintain professional project docs without complexity.
+
+## Key Features
+
+Discover the essential capabilities through these feature cards.
+
+<Columns cols={3}>
+  <Card title="Document Organization" icon="folder" href="#organization">
+    Create folders and subfolders to structure your docs hierarchically. Nest content logically for easy navigation.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="#collaboration">
+    Invite team members, assign roles, and edit docs in real-time. Track contributions effortlessly.
+  </Card>
+  <Card title="Search and Tagging" icon="search" href="#search">
+    Full-text search and custom tags help you find content instantly across your workspace.
+  </Card>
+  <Columns cols={2}>
+    <Card title="Version Control" icon="git-branch" href="#version-control">
+      Automatic versioning with diff views and rollback options keep your history intact.
+    </Card>
+    <Card title="Export and Sharing" icon="share-2" href="#export">
+      Export to PDF, Markdown, or HTML. Generate shareable links with permissions.
+    </Card>
+  </Columns>
+</Columns>
+
+## Document Organization and Folders
+
+Organize your docs into intuitive folder structures. You create top-level folders for projects like `Roadmap` or `API Docs`, then add subfolders for specifics.
+
+<Steps>
+  <Step title="Create Folder" icon="folder-plus">
+    Navigate to your workspace root. Click the `+ Folder` button and name it `Project Alpha`.
+
+    ```
+    Folder Structure Example:
+    - Project Alpha/
+      - Planning/
+      - Development/
+    ```
+  </Step>
+  <Step title="Nest Subfolders" icon="folder">
+    Inside `Project Alpha`, add `Planning`. Drag docs between folders to reorganize.
+  </Step>
+  <Step title="Reorder" icon="move">
+    Use drag-and-drop to set hierarchy. Folders support unlimited nesting.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use consistent naming like `v1.0-Release-Notes` for better discoverability.
+</Callout>
+
+## Collaboration Tools for Teams
+
+Collaborate securely with role-based access: Owner, Editor, Viewer.
+
+<Tabs>
+  <Tab title="Invite Members" icon="user-plus">
+
+    Send invites via email.
+
+    ```bash
+    # Admin command (CLI example)
+    mps invite --email team@company.com --role editor
+    ```
+
+  </Tab>
+  <Tab title="Real-time Editing" icon="edit-3">
+
+    Multiple users edit simultaneously. Changes appear live.
+
+    <Image
+      src="https://via.placeholder.com/800x400/3B82F6/white?text=Real-time+Collaboration"
+      alt="Real-time editing interface showing multiple cursors"
+      width="800"
+      height="400"
+    />
+
+  </Tab>
+</Tabs>
+
+## Search and Tagging
+
+Leverage powerful search. Query across all docs, filter by tags.
+
+| Feature | Description |
+|---------|-------------|
+| Full-text Search | Finds matches in titles, content, metadata |
+| Tags | Add `urgent`, `draft`, `published` for filtering |
+| Advanced Filters | Date range, folder, author |
+
+Add tags directly in the editor UI.
+
+## Version Control for Docs
+
+Every edit creates a version. View history, compare diffs, restore.
+
+<Expandable title="Advanced Version Workflow" default-open="false">
+  Access via doc menu: `History > Compare v1.2 with v1.0`.
+
+  ```javascript
+  // API example for programmatic access
+  const versions = await mps.docs.getVersions('doc-id');
+  console.log(versions); // Array of {id, date, author, changes}
+  ```
+</Expandable>
+
+## Export and Sharing Options
+
+Export formats suit any need. Share links expire or require auth.
+
+<CodeGroup tabs="Markdown,PDF,HTML">
+  ```markdown
+  # My Doc
+  Content exports perfectly.
+  ```
+  ```bash
+  mps export doc-id --format pdf --output ./docs.pdf
+  ```
+  ```html
+  <!DOCTYPE html>
+  <html>Generated HTML</html>
+  ```
+</CodeGroup>
+
+<Callout kind="success">
+  Start with organization to unlock collaboration efficiency.
+</Callout>
